@@ -8,6 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 import productosRoutes from "./routes/productos.routes.js"
 import usuariosRoutes from "./routes/usuarios.routes.js"
+import homeRoutes from "./routes/home.routes.js"
 
 
 //Instancia de express
@@ -25,6 +26,8 @@ app.use("/public", express.static(__dirname + "/public"))
 //Endpoints API
 app.use("/api/v1/productos", productosRoutes) 
 app.use("/api/v1/usuarios", usuariosRoutes )
+
+app.use("/", homeRoutes )
 
 
 export default app
